@@ -1,0 +1,5 @@
+from
+request.QueryString\("([^"()]*)"\)
+
+to
+$_GET["$1"]

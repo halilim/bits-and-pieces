@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<dwquery>
+  <queryparams matchcase="false" ignorewhitespace="false" useregexp="true" wholeword="false" />
+  <find searchmode="document">
+    <qtext qname="&lt;input([^&lt;&gt;]*)name=&quot;?([^&quot;\s]*)&quot;?([^&lt;&gt;]*)&gt;" qraw="true"></qtext>
+  </find>
+  <replace action="replaceText" param1="<?php if ($_msj) { echo $_POST['$2']; } else { ?><input$1name=&quot;$2&quot; value=&quot;<?=@$_POST['$2']?>&quot; $3><?php } ?>" param2=""/>
+</dwquery>

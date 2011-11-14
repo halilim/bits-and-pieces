@@ -1,0 +1,3 @@
+.niceCbNew{width: 15px; height: 15px;background:url(../images/detail/kkSec.png) no-repeat left top;display: inline-block;vertical-align: bottom;}
+.niceCbNew.selected{background-position: right top;}
+.niceCbCb{position: absolute;top: 0; left: -9999em;}
