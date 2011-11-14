@@ -1,0 +1,22 @@
+# Disable server signature
+ServerSignature Off
+
+# Disable folder listing
+Options All -Indexes
+
+# A smiple rewrite
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !/admin/ [NC]
+RewriteRule ^([a-zA-Z0-9]*)/([a-zA-Z0-9]*)/?.*\.html ?act=$1&id=$2
+
+# Www redirect
+RewriteCond %{HTTP_HOST} ^example.com [NC] 
+RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301] 
+
+# Site URL change
+redirect 301 / http://new.example.com/
+
+# Fancy Indexing (requires mod_autoindex)
+IndexOptions FoldersFirst FancyIndexing HTMLTable VersionSort
