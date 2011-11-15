@@ -1,0 +1,10 @@
+var params = '';
+for (var enumerator = new Enumerator(WScript.Arguments); !enumerator.atEnd(); enumerator.moveNext()) {
+	params += enumerator.item() + ' ';
+}
+params = decodeURIComponent(params.substring(params.indexOf(':') + 1));
+var cmd = '"D:\\Program Files\\PuTTY\\putty.exe" ' + decodeURIComponent(params);
+var oShell = new ActiveXObject("WScript.Shell");
+oShell.Run(cmd);
+// WScript.Echo('cmd:'+cmd);
+// WScript.Sleep(3750);

@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Folder\shell\cmd]
+@="&CMD"
+
+[HKEY_CLASSES_ROOT\Folder\shell\cmd\command]
+@="cmd /k cd \"%1\""

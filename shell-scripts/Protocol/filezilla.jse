@@ -1,0 +1,11 @@
+var params = '';
+for (var enumerator = new Enumerator(WScript.Arguments); !enumerator.atEnd(); enumerator.moveNext()) {
+	params += enumerator.item() + ' ';
+}
+params = params.substring(params.indexOf(':') + 3);
+var cmd = '"C:\\Program Files (x86)\\FileZilla FTP Client\\filezilla.exe" ' + decodeURIComponent(params);
+var oShell = new ActiveXObject("WScript.Shell");
+oShell.Run(cmd);
+
+//WScript.Echo('cmd:'+cmd);
+WScript.Sleep(3750);

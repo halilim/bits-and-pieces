@@ -9,6 +9,7 @@ Changing DNS server addresses in Windows is quite a pain in the a**. This little
  * Preferably make a shortcut of it in the quick launch, desktop, or your choice of shortcut container
  * Right click the file and choose "Open in the command line" or something like it
  * Choose from the list
+ * To cancel while the script is running, press Ctrl + C
 
 #### Modification
 
