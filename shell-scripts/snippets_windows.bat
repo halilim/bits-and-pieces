@@ -16,6 +16,6 @@ REM     Yardým : sadece forfiles
 
 
 REM Defrag C and D drives & shutdown - for Windows (save as *.cmd/*.bat)
-Windows 7:
+REM Windows 7:
 defrag C: D: /H /U /V /X > %userprofile%\desktop\defrag_%date%.log
 shutdown /s
