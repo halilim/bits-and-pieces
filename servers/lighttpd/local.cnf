@@ -1,0 +1,7 @@
+url.rewrite-once = (
+  "/(.*)\.(php|gif|swf|jpg|css|js|ico|png|jpeg|flv|xml)(\?(.*))?$" => "$0",
+  "^/(css|files|images|etc)/(\?(.*))?$" => "$0",
+  "^/(.+)(\?(.*))?$" => "index.php$0",
+  #"(.*)\?(.*)" => "$0",
+  "^/$" => "index.php"
+)
