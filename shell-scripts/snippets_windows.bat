@@ -19,3 +19,7 @@ REM Defrag C and D drives & shutdown - for Windows (save as *.cmd/*.bat)
 REM Windows 7:
 defrag C: D: /H /U /V /X > %userprofile%\desktop\defrag_%date%.log
 shutdown /s
+
+REM Exact match file/folder name search
+REM Type name:="test.etc" into the search textbox in GUI (Türkçe Windows: ad:="test.etc")
+forfiles /s /m "test.etc"
