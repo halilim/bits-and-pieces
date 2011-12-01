@@ -1,18 +1,18 @@
-REM Tüm vhosts loglarýný sil
+ï»¿REM TÃ¼m vhosts loglarÄ±nÄ± sil
 del "C:\Inetpub\vhosts\*.log" /f /s /q
 
-REM 30 gün ve daha eski .uzanti uzantýlý dosyalarý sil
+REM 30 gÃ¼n ve daha eski .uzanti uzantÄ±lÄ± dosyalarÄ± sil
 FORFILES -p "C:\vesaire\yol" -s -m *.uzanti -d -30 -c "CMD /C del @FILE"
 
-REM Ör. eski mailleri silmede vs kullanýlabilir
+REM Ã–r. eski mailleri silmede vs kullanÄ±labilir
 FORFILES -p "C:\vesaire\mailroot yolu" -s -m *.MAI -d -30 -c "CMD /C del @FILE"
 
-REM Yardým: forfiles /?
+REM YardÄ±m: forfiles /?
 
 REM XP 'de;
 REM     Yoksa ftp://ftp.microsoft.com/ResKit/y2kfix/x86/ adresinden edinilebilir
-REM     Parametre harfi ve deðeri arasýndaki boþluklar olmamalý (-p "yol/..." deðil de -p"yol/...")
-REM     Yardým : sadece forfiles
+REM     Parametre harfi ve deÄŸeri arasÄ±ndaki boÅŸluklar olmamalÄ± (-p "yol/..." deÄŸil de -p"yol/...")
+REM     YardÄ±m : sadece forfiles
 
 
 REM Defrag C and D drives & shutdown - for Windows (save as *.cmd/*.bat)
@@ -21,5 +21,5 @@ defrag C: D: /H /U /V /X > %userprofile%\desktop\defrag_%date%.log
 shutdown /s
 
 REM Exact match file/folder name search
-REM Type name:="test.etc" into the search textbox in GUI (Türkçe Windows: ad:="test.etc")
+REM Type name:="test.etc" into the search textbox in GUI (TÃ¼rkÃ§e Windows: ad:="test.etc")
 forfiles /s /m "test.etc"
