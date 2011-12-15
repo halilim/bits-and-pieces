@@ -17,6 +17,7 @@
 ;(function($){
     $.fn.dropdownize = function(options) {
         var defaults = {
+            preDelay: 0,
             hideAfter: 400,
             showOn: "mouseenter",
             showFn: function (){
@@ -36,6 +37,10 @@
                 menuElem = $(o.menuEl);
             }
             var ddzTOId = 0;
+            function ddzShow(){
+                o.showFn.call(menuElem);
+                $this.addClass("hover");
+            }
             function ddzHide(){
                 o.hideFn.call(menuElem);
                 $this.removeClass("hover");
@@ -52,12 +57,20 @@
                 }
             }
             $this.bind(o.showOn + ".dropdownize", function (){
-                o.showFn.call(menuElem);
-                $(this).addClass("hover");
+                if (o.preDelay) {
+                    $this.data("ddz.htId", setTimeout(function (){
+                       ddzShow();
+                    }, o.preDelay));
+                } else {
+                    ddzShow();
+                }
             });
             $this.add(menuElem)
                 .bind("mouseleave.dropdownize", function (){
                     ddzSetHide();
+                    if ($this.data("ddz.htId")) {
+                        clearTimeout($this.data("ddz.htId"));
+                    }
                 })
                 .bind("mouseenter.dropdownize", function (){
                     ddzClrTO();
