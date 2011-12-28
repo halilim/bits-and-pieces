@@ -5,8 +5,8 @@
     $.fn.hideOnDocClick = function(hideFn) {
         return this.each(function() {
             var $this = $(this);
-            $this.click(function() {
-                return false;
+            $this.click(function(e) {
+                e.stopPropagation();
             });
             $(document).click(function() {
                 if (hideFn) {
