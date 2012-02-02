@@ -2,10 +2,11 @@ var params = "";
 for (var enumerator = new Enumerator(WScript.Arguments); !enumerator.atEnd(); enumerator.moveNext()) {
     params += enumerator.item() + " ";
 }
-params = decodeURIComponent(encodeURIComponent(params.substring(params.indexOf(":") + 3))).replace(/\/([#])/g, "$1").replace(/\/$/, "");
+params = decodeURIComponent(encodeURIComponent(params.substring(params.indexOf(":") + 3))).replace(/\/([#])/g, "$1");
 // WScript.Echo("params:"+params);
 // WScript.Sleep(3750);
 var cmd = '"D:\\Program Files\\PuTTY\\putty.exe" ' + params;
+cmd = cmd.replace(/\/\s*$/, "");
 var oShell = new ActiveXObject("WScript.Shell");
 oShell.Run(cmd);
 // WScript.Echo('cmd:'+cmd);
