@@ -1,17 +1,12 @@
 var params = "";
-/*var namedArgs = WScript.Arguments.Named;
-WScript.Echo("Item0:" + WScript.Arguments.Item(0) + "||");
-WScript.Echo("namedArgs[passwd]:"+namedArgs.Item("passwd"));*/
-WScript.Echo("Item 7:" + WScript.Arguments.Item(7) + "||");
-WScript.Echo("wa Item 7:" + WshArguments.Item(7) + "||");
 for (var enumerator = new Enumerator(WScript.Arguments); !enumerator.atEnd(); enumerator.moveNext()) {
     params += enumerator.item() + " ";
 }
-params = decodeURIComponent(encodeURIComponent(params.substring(params.indexOf(":") + 3)));
+params = decodeURIComponent(encodeURIComponent(params.substring(params.indexOf(":") + 3))).replace(/\/([#])/g, "$1").replace(/\/$/, "");
 // WScript.Echo("params:"+params);
 // WScript.Sleep(3750);
 var cmd = '"D:\\Program Files\\PuTTY\\putty.exe" ' + params;
 var oShell = new ActiveXObject("WScript.Shell");
 oShell.Run(cmd);
-WScript.Echo('cmd:'+cmd);
-WScript.Sleep(3750);
+// WScript.Echo('cmd:'+cmd);
+// WScript.Sleep(3750);
