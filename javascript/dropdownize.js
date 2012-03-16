@@ -19,12 +19,13 @@
         var defaults = {
             preDelay: 0,
             hideAfter: 400,
+            animSpeed: "fast",
             showOn: "mouseenter",
             showFn: function (){
-                        $(this).slideDown("fast");
+                        $(this).slideDown(o.animSpeed);
                     },
             hideFn: function (){
-                        $(this).slideUp("fast");
+                        $(this).slideUp(o.animSpeed);
                     }
         };
         var o = $.extend(true, {}, defaults, options);
@@ -38,10 +39,12 @@
             }
             var ddzTOId = 0;
             function ddzShow(){
+                menuElem.stop(true, true);
                 o.showFn.call(menuElem);
                 $this.addClass("hover");
             }
             function ddzHide(){
+                menuElem.stop(true, true);
                 o.hideFn.call(menuElem);
                 $this.removeClass("hover");
                 ddzTOId = 0;
