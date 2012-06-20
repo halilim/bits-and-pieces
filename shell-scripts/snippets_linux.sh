@@ -1,6 +1,8 @@
 # More
 # * http://www.pixelbeat.org/cmdline.html
 
+# !!!NOT: * -> . ile baþlayanlarý içermez (ör. .htaccess)
+
 #Apache restart
 /etc/init.d/httpd restart
 
@@ -14,20 +16,20 @@ chown 33:33 dosya.vs
 chown -R vs_com:apache deneme/
 # -> deneme klasörü ve tüm içindekiler owner vs_com, group apache
 
-chown -R client:psacln *
+find '!' -name '.' -exec chown client:psacln {} \+
 # -> bulunulan klasörün içindeki her þey owner client, group psacln
-
+# eski: chown -R client:psacln * -> .* dosyalarý dahil etmiyordu (ör. .htaccess)
 
 # chmod Örnekleri
 
 chmod -R 0777 cache/
 # -> cache dizini ve içindekileri recursive olarak 0777 yap
 
-chmod -R og-w *
-# -> Sahip hariç yazma izinlerini kaldýr
+find '!' -name '.' -exec chmod og-w {} \+
+# -> Bulunulan klasördeki her þeyde sahip hariç yazma izinlerini kaldýr
 # (u: user (you), g: group, o: other, a:all)
 
-find . -type d -exec chmod 755 {} \;
+find . -type d -exec chmod 755 {} \+
 # -> Tüm klasörleri 0777 yap
 
 # unix numeric file modes (dosya/klasör izinleri)
@@ -63,8 +65,8 @@ tar zxvf <dosya adý>
 # ( baþka param verilmediðinden bulunulan klasöre çýkarýr )
 
 # Bir klasörü sýkýþtýrmak
-tar -czvf a.tgz *
-tar -cjvf a.tar.bz2 *
+tar -czvf a.tgz .
+tar -cjvf a.tar.bz2 .
 
 # ssh port deðiþtirmek
 # 1. vi /etc/ssh/sshd_config
