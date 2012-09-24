@@ -1,0 +1,3 @@
+mail.google.com##.Bs > tr > .Bu:nth-child(2)
+gemius.com.tr##*
+*gemius*$script
