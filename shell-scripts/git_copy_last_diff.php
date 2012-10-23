@@ -5,6 +5,7 @@
  * @copyright 2012
  *
  * Copy the changed/added files in the last git commit
+ *
  * Usage:
  *     php "<path>/git_copy_last_diff.php" "<repo path>" "<export path>"
  *
@@ -13,6 +14,8 @@
  *     @="Git &Export Last Diff"
  *     command:
  *     cmd /C <usage> (change /'s with \'s)
+ *     e.g.:
+ *     cmd /C php "D:\Code\bits-and-pieces\shell-scripts\git_copy_last_diff.php" "%1" "C:\Users\Halil\Desktop\export_temp"
  */
 
 define('DS', DIRECTORY_SEPARATOR);
