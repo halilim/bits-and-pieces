@@ -9,4 +9,4 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\filezilla\shell\open]
 
 [HKEY_CLASSES_ROOT\filezilla\shell\open\command]
-@="CScript \"D:\\Araçlar\\Code\\Protocol\\filezilla.jse\" \"%1\""
+@="WScript \"D:\\Araçlar\\Code\\Protocol\\filezilla.jse\" \"%1\""
