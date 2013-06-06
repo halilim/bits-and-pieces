@@ -7,4 +7,5 @@ REM 4. Move %APPDATA%\Skype into the container, e.g. K:\AppData\Skype
 REM 5. mklink /D "%APPDATA%\Skype" "K:\AppData\Skype"
 REM 6. [Optional] Add this to startup e.g. make a shortcut in "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 "%PROGRAMFILES%\TrueCrypt\TrueCrypt.exe" /v "<PATH TO CONTAINER>" /a /q /l K
+TIMEOUT /T 4 /NOBREAK
 start "" "C:\Program Files (x86)\Skype\Phone\Skype.exe"
