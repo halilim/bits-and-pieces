@@ -1,3 +1,5 @@
+/* !!! IMPORTANT: MOVED TO https://github.com/halilim/cbFamily !!! */
+
 /**
  * Make a checkbox parent of other checkboxes. Functionality:
  *   - If the parent is clicked the children are checked/unchecked based on the parent.
