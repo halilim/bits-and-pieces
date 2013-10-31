@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+
+<?php
+
+/**
+ * @author Halil Özgür <halil.ozgur@gmail.com>
+ * @copyright 2013
+ *
+ * Copy the files changed/added in the last git commit along with their folder structure.
+ * Example use cases:
+ *     Uploading the changed files
+ *     Temporarily copying those files for some processing and later copying them back
+ *     ...etc
+ *
+ * Usage:
+ *     git_copy_last_diff "<repo path>" "<export path>"
+ *
+ * A third argument to this script is available. Available values (currently only one):
+ *     W -> the files that are changed since the last commit (in the working tree)
+ *
+ * Install:
+ *     chmod +x git_copy_last_diff
+ *     sudo ln -s $PWD/git_copy_last_diff /usr/local/bin
+ *     # optional
+ *     echo '#!/bin/bash\n\ngit_copy_last_diff "$(git rev-parse --show-toplevel)" <YOUR_EXPORT_DIR>' > ~/bin/git_copy_last_this
+ *     chmod +x ~/bin/git_copy_last_this
+ */
+
+require_once __DIR__ . "/git_copy_last_diff.php";
