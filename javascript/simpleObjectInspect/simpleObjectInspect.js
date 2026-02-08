@@ -1,4 +1,4 @@
-// Halil Özgür halil.ozgur Alt+65 t gmail com
+// Halil Özgür https://halil.im/
 function simpleObjInspect(oObj, key, tabLvl)
 {
     key = key || "";

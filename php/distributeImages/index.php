@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Halil Özgür | halil.ozgur ATISHERE gmail.com
+ * @author Halil Özgür | https://halil.im/
  */
 
 function unixize($path)

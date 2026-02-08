@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Halil Özgür <halil.ozgur@gmail.com>
+ * @author Halil Özgür <https://halil.im/>
  * @copyright 2012
  *
  * Copy the files changed/added in the last git commit along with their folder structure.
